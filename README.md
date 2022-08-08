@@ -71,6 +71,27 @@ The AWS shared responsibility model is about making sure both sides understand e
 
 ### User Permissions and Access
 
+AWS Identity and Access Managemnet (IAM)
+
+When you set up your AWS account, you become the root owner with root access to the account.  you have no restrictions on the AWS account.  When you first setup your account, turn on MFA (multi-factory authorization).
+
+You control access and permissions with IAM
+- First create IAM user.  The user has no permissions, you must explicity allow actions to be done by any user.
+- Known as the least privelaged acces
+- IAM policy is a JSON document that describes AWSA API call a user can or cannot make
+- Policies can allow or deny, then list action and resource
+- Create IAM groups that group users and attach a policy to that group instead of individaully adding polices to each user.
+
+
+AWS IAM
+- root user
+- IAM user represents a person or application.  By default no permissions assigned initially to an IAM user
+- IAM Groups - A collection of IAM users
+- IAM Polices - permisions assigned to users or groups.  Follow the principle of least privelage
+- IAM Role - You can create identities in AWS called roles that temporarily allow or deny particular permissions to users, applications or services.  To temporarily gain or grant access to a particular role.  When "receiving the role" the IAM user, app, or service abando all previous permissions under the previous role and assume permissions of the new role
+- Federate users into IAM account....
+
+
 #### Transcript
 In the coffee shop, every employee has an identity. They come into work in the morning and they'd log into the system to clock in, use the registers and manage the systems, running the coffee shop, day to day. We have the cash registers, the computers helping run the whole operation. Each person has unique access to these systems based on who they are. 
 
