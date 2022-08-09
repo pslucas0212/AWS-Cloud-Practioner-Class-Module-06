@@ -282,3 +282,46 @@ Another service dimension is our threat detection offering known as Amazon Guard
 
 They are so many other security services like Advanced Shield and Security Hub. So please check out the Resources section to learn more. Thanks for following along.
 
+### Module Summary
+
+AWS follows the share responsiblity model.  AWS is responsible for security of the cloud and customers are responsible for security in the cloud.
+
+AWS IAM
+- IAM User- by default no permssions
+- IAM Role - Temporary roles that IAM users can assume
+- IAM Group - Collection of users
+- Polices - given permissions allow or deny an explicit action in AWS
+- Federate current identity information from corporate systems, so that user can use on userid and password
+- Multi-factor authenticat - MFA
+
+
+AWS organizations allow you to organize AWS accounts in a hierachal 
+
+Compliance
+- AWS Artifact assesment
+- AWS Artifact agreements
+
+
+DDOS - Distribured dential of service attacks
+- combat with ELB, security grous, AWS Shield and WAF
+
+Encyrption - you own your data and are responsible for encrypting data in rest and in transit.
+
+Use least privelaged principles when setting up users and encrypt data
+#### Transcript
+
+Alright, it's time to break down what we just covered. First things first, AWS follows a shared responsibility model. AWS is responsible for security of the cloud, and you are responsible for security in the cloud. 
+
+
+With IAM, you have users, groups, roles, and policies. Users log in with a username and password and by default they have no permissions. Groups are groupings of users and roles are identities that you can assume to gain access to temporary credentials and permissions for a configurable amount of time. In order to give permissions to an identity, you need to create policies that either explicitly allow or deny a specific action in AWS. With IAM also comes identity federation. If you have an existing corporate identity store, you can federate those users to AWS, using role based access, which allows your users to use one login for both your corporate systems as well as AWS. One final point to remember about IAM is that you should make sure that you turn on multi-factor authentication for users, but especially for your root user which has all the permissions by default and cannot be restricted. 
+
+
+Next up, we discussed AWS Organizations. With AWS, it's likely you'll have multiple accounts. Accounts are commonly used to isolate workloads, environments, teams, or applications. AWS Organizations helps you manage multiple accounts in a hierarchical fashion. We then discussed compliance. AWS uses third-party auditors to prove its adherence to a wide variety of compliance programs. You can use the AWS Compliance Center to find more information on compliance and AWS Artifact to gain access to compliance documents. The compliance requirements you have will vary from application to application and between areas of operation. 
+
+
+Then we talked about distributed denial-of-service attacks, or DDoS attacks, and how to combat them with AWS using tools like ELB, security groups, AWS Shield, and AWS WAF. 
+
+We also talked about encryption. In AWS, you are the owner of your data, and you are responsible for security. That means you need to pay attention to encryption, in transit and at rest. 
+
+
+There are lots of considerations when dealing with security in AWS. Security is AWS's top priority, and will continue to be so. Please make sure you read the documentation on securing your AWS resources, as it does vary from service to service. Use the least privilege principle when scoping permissions for users and roles in IAM, encrypt your data at every layer, both in transit and at rest. And make sure you use AWS services to protect your environment.
