@@ -246,3 +246,39 @@ To overwhelm ELB, you would once again have to overwhelm the entire AWS region. 
 
 
 All right, that's it, the clock is almost up. The takeaway is a well-architected system is already defended against most attacks. And by using AWS Shield Advanced, you can turn AWS into your partner against DDoS attacks. Oh, oh.
+
+### Additional Security Services
+
+Securing Data at rest and in transit.  Encyrption at rest when data is sitting in storage.  DynamoDB automaticatlly is encrypted.  AWS Key management  Services (AWS KMS) is where you encryprtion kes are cread and managed.   Encryption in transit is enabled via SSL and key certfidates
+
+AWS WAF aka AWS Web application firewall.  AWS WAF works with Amazon CloudFrotn and the Application Load Balancer. It uses a web access control lists (ACL) to protect web resrouces.
+
+
+Amazon Inspector checks your systems for vulenrabilites and security best practices by running automated security assessments
+- Network configuration
+- Amazon Agent installed EC2
+- Analysis service which identifies security issues and recommendations to remediat
+
+Amazon Guardduty - analyze network and account activity for analyizing security threats.  It runs independtly of AWS services so does it affact performance or availability of your AWS service.  You can use AWS Lambda functions to automatically remediate security in response to GuardDuty's findings.
+
+#### Transcript
+With all the comings and goings on in your coffee shop, you'll want to increase security to your coffee beans, equipment, and even money in the till. For your beans, this could be when they're sitting in your store room, or even when you're transporting them between shops. After all, we don't want unwanted visitors with access to our coffee beans, or even running off with precious equipment. 
+
+
+To start off, let's chat about how you can secure your coffee beans, or your data whether it's at rest, or in transit. For our beans, the simple way to do it would be to lock the door when we'd leave at night. That's the notion of encryption, which is securing a message or data in a way that can only be accessed by authorized parties. Non-authorized parties are therefore less likely to be able to access the message. Or not able to access it at all. Think of it as that key and door example. If you have the key, you can unlock the door. But if you don't, then you cannot unlock that door. 
+
+
+At AWS, this comes in two variations. Encryption at rest and encryption in transit. By at rest, we mean when your data is idle. It's just being stored and not moving. For example, server-side encryption at rest is enabled on all DynamoDB table data. And that helps prevent unauthorized access. DynamoDB's encryption at rest also integrates with AWS KMS, or Key Management Service, for managing the encryption key that is used to encrypt your tables. That's the key for your door, remember? And without it, you won't be able to access your data. So make sure to keep it safe. 
+
+
+Similarly, in-transit means that the data is traveling between, say A and B. Where A is the AWS service, and B could be a client accessing the service. Or even another AWS service itself. For example, let's say we have a Redshift instance running. And we want to connect it with a SQL client. We use secure sockets layer, or SSL connections to encrypt data, and we can use service certificates to validate, and authorize a client. This means that data is protected when passing between Redshift, and our client. And this functionality exists in numerous other AWS services such as SQS, S3, RDS, and many more. 
+
+
+But speaking of other services, the next service we want to highlight is called Amazon Inspector. Inspector helps to improve security, and compliance of your AWS deployed applications by running an automated security assessment against your infrastructure. Specifically, it helps to check on deviations of security best practices, exposure of EC2 instances, vulnerabilities, and so forth. The service consists of three parts a network configuration reachability piece, an Amazon agent, which can be installed an EC2 instances, and a security assessment service that brings them all together. To use it, you configure Inspector options, run the service, out pops a list of potential security issues. The resulting findings are displayed in the Amazon Inspector console, and they are presented with a detailed description of the security issue, and a recommendation on how to fix it. Additionally, you can retrieve findings through an API. So as to go towards the best practice of performing remediation to fix issues. 
+
+
+Another service dimension is our threat detection offering known as Amazon GuardDuty. It analyzes continuous streams of metadata generated from your account, and network activity found on AWS CloudTrail events, Amazon VPC Flow Logs, and DNS logs. It uses integrated threat intelligence such as known malicious IP addresses, anomaly detection, and machine learning to identify threats more accurately. The best part is that it runs independently from your other AWS services. So it won't affect performance or availability of your existing infrastructure, and workloads. 
+
+
+They are so many other security services like Advanced Shield and Security Hub. So please check out the Resources section to learn more. Thanks for following along.
+
